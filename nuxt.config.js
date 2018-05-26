@@ -16,6 +16,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
+    // script: [{
+    //   src: 'https://s3.tradingview.com/tv.js'
+    // }]
   },
   plugins: ['~/plugins/vuetify.js'],
   css: [
@@ -48,22 +51,22 @@ module.exports = {
     */
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true
-          }
-        })
+         config.module.rules.push({
+           enforce: 'pre',
+           test: /\.(js|vue)$/,
+           loader: 'eslint-loader',
+           exclude: /(node_modules)/,
+           options: {
+             fix: true
+           }
+         })
       }
       if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
+         config.externals = [
+           nodeExternals({
+             whitelist: [/^vuetify/]
+           })
+         ]
       }
     }
   }

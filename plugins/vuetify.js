@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import AllCoins from '../components/AllCoins.vue'
+import Charts from '../components/Charts.vue'
 import {
   Vuetify,
   VApp,
@@ -35,3 +36,4 @@ Vue.use(Vuetify, {
 })
 
 Vue.component('all-coins', AllCoins)
+Vue.component('charts-view', Charts)

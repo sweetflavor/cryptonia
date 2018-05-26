@@ -28,11 +28,11 @@
                 <template slot="items" slot-scope="props">
                 <!-- <td class="text-xs-left"><i class="cc" v-bind:class="getClassIcon(props.item.symbol)"></i> {{ props.item.name }}</td> -->
                 <tr @click="props.expanded = !props.expanded">
-                  <td class="text-xs-left td-name"> <img 
+                  <td class="text-xs-left td-name"> <nuxt-link class="center-fx" :to="'/coins/' + props.item.id"> <img 
                                               class="avatarCoin"
                                               v-if="props.item.symbol"
                                               :src="`color-icons/${props.item.symbol.toLowerCase()}.svg`"/> 
-                                                <strong><p>{{ props.item.name }}</p></strong></td>
+                                                <strong><p>{{ props.item.name }}</p></strong></nuxt-link></td>
                   <td class="text-xs-right">{{ props.item.quotes.USD.price + ' $' }}</td>
                   <td class="text-xs-right">{{ props.item.quotes.USD.market_cap.toLocaleString() + ' $' }}</td>
                   <td class="text-xs-right">{{ props.item.total_supply.toLocaleString()  + ' $' }}</td>
@@ -56,6 +56,7 @@
 </template>
 <script>
 import axios from 'axios'
+import Vue from 'vue'
 
 let coinNamesList = []
 
@@ -70,6 +71,8 @@ axios.get('https://api.coinmarketcap.com/v2/ticker/')
   .catch(function (error) {
     console.log(error)
   })
+
+Vue.prototype.$appCoinList = coinNamesList
 
 export default {
   data () {
@@ -90,99 +93,7 @@ export default {
         { text: 'Percent Change 24h', value: 'percent_change_24h' },
         { text: 'Percent Change 7d', value: 'percent_change_7d' }
       ],
-      coins: coinNamesList,
-      desserts: [
-        {
-          value: false,
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: '1%'
-        },
-        {
-          value: false,
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: '1%'
-        },
-        {
-          value: false,
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: '7%'
-        },
-        {
-          value: false,
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: '8%'
-        },
-        {
-          value: false,
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          iron: '16%'
-        },
-        {
-          value: false,
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          iron: '0%'
-        },
-        {
-          value: false,
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          iron: '2%'
-        },
-        {
-          value: false,
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          iron: '45%'
-        },
-        {
-          value: false,
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          iron: '22%'
-        },
-        {
-          value: false,
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          iron: '6%'
-        }
-      ]
+      coins: coinNamesList
     }
   },
   methods: {

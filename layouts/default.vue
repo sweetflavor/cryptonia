@@ -44,7 +44,9 @@
       >
         <v-icon>remove</v-icon>
       </v-btn> -->
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <nuxt-link class="center-fx" :to="'/'">
+        <v-toolbar-title v-text="title"></v-toolbar-title>
+      </nuxt-link>
       <v-spacer></v-spacer>
       <v-btn
         icon
