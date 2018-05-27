@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 import AllCoins from '../components/AllCoins.vue'
 import Charts from '../components/Charts.vue'
+import Calculator from '../components/Calculator.vue'
 import {
   Vuetify,
   VApp,
@@ -15,7 +16,9 @@ import {
   VToolbar,
   VAvatar,
   VTextField,
-  VDataTable
+  VDataTable,
+  VSelect,
+  VRadioGroup
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -31,9 +34,12 @@ Vue.use(Vuetify, {
     VToolbar,
     VAvatar,
     VTextField,
-    VDataTable
+    VDataTable,
+    VSelect,
+    VRadioGroup
   }
 })
 
 Vue.component('all-coins', AllCoins)
 Vue.component('charts-view', Charts)
+Vue.component('calculator', Calculator)
