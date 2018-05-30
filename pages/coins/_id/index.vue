@@ -33,7 +33,7 @@
               </td>
               <td class="text-xs-left">{{ props.item.circulating_supply.toLocaleString() }} {{ props.item.symbol }}</td>
               <td class="text-xs-left">{{ props.item.total_supply.toLocaleString() }} {{ props.item.symbol }}</td>
-              <td class="text-xs-left">{{ props.item.max_supply.toLocaleString() }} {{ props.item.symbol }}</td>
+              <td class="text-xs-left">{{ props.item.max_supply ? props.item.max_supply.toLocaleString() : '' }} {{props.item.max_supply ? props.item.symbol : ''}}</td>
               <td class="text-xs-left">
                 $ {{ props.item.quotes.USD.volume_24h.toLocaleString() }} USD <br>
                 {{ props.item.quotes.BCH.volume_24h.toLocaleString() }} BTC <br>
