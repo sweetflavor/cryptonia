@@ -17,8 +17,6 @@
             <h2 v-bind:class="getClass(item.quotes.BCH.percent_change_24h)">{{item.quotes.BCH.price}} BTC</h2>
           </div>
         </div>
-    
-        <charts-view :symbol="item.symbol"></charts-view>
           <v-flex xs12>
             <v-data-table
             :headers="headers"
@@ -41,6 +39,9 @@
             </template>
           </v-data-table>
         </v-flex>
+
+        <charts-view :symbol="item.symbol" :history="historyRange"></charts-view>
+
       </v-layout>
     </v-container>
 </template>
@@ -51,6 +52,7 @@ export default {
   data () {
     return {
       singleCoin: [],
+      historyRange: 'histoday',
       headers: [
         { text: 'Market Cap', value: 'market_cap' },
         { text: 'Circulating Supply', value: 'circulating_supply' },
