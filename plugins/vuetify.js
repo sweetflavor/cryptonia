@@ -3,6 +3,7 @@ import Vue from 'vue'
 import AllCoins from '../components/AllCoins.vue'
 import Charts from '../components/Charts.vue'
 import Calculator from '../components/Calculator.vue'
+import moment from 'moment'
 import {
   Vuetify,
   VApp,
@@ -21,6 +22,10 @@ import {
   VRadioGroup,
   VExpansionPanel
 } from 'vuetify'
+
+Vue.use('vue-moment', {
+  moment
+})
 
 Vue.use(Vuetify, {
   components: {
