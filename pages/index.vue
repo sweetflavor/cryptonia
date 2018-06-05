@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire">
+    <v-app id="news">
     <v-container grid-list-md text-xs-center>
       <v-layout row wrap>
         <v-flex xs4>

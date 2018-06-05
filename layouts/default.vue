@@ -78,8 +78,8 @@
         drawer: true,
         fixed: false,
         items: [
-          { icon: 'list', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+          { icon: 'list', title: 'All Coins list', to: '/' },
+          { icon: 'bubble_chart', title: 'Latest Cryptocurrency News', to: '/news' }
         ],
         miniVariant: false,
         right: true,
