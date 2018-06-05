@@ -18,7 +18,8 @@ import {
   VTextField,
   VDataTable,
   VSelect,
-  VRadioGroup
+  VRadioGroup,
+  VExpansionPanel
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -36,7 +37,8 @@ Vue.use(Vuetify, {
     VTextField,
     VDataTable,
     VSelect,
-    VRadioGroup
+    VRadioGroup,
+    VExpansionPanel
   }
 })
 
