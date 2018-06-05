@@ -40,7 +40,7 @@
           </v-data-table>
         </v-flex>
 
-        <charts-view :symbol="item.symbol" :history="historyRange"></charts-view>
+        <charts-view :symbol="item.symbol"></charts-view>
 
       </v-layout>
     </v-container>
@@ -52,7 +52,6 @@ export default {
   data () {
     return {
       singleCoin: [],
-      historyRange: 'histoday',
       headers: [
         { text: 'Market Cap', value: 'market_cap' },
         { text: 'Circulating Supply', value: 'circulating_supply' },
@@ -63,6 +62,7 @@ export default {
     }
   },
   mounted () {
+    console.log('Mounted')
     let vm = this
     axios.get('https://api.coinmarketcap.com/v2/ticker/' + this.$route.params.id + '/?convert=BCH')
       .then(function (response) {

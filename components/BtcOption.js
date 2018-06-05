@@ -35,7 +35,8 @@ export default class BTCoption {
         end: 100
       }
       ],
-      tooltip: {},
+      tooltip: {
+      },
       xAxis: {
         data: this.label,
         silent: false,
@@ -45,7 +46,7 @@ export default class BTCoption {
       },
       yAxis: {},
       series: [{
-        name: 'bar',
+        name: 'BTC',
         type: 'line',
         data: this.priceBTC,
         animationDelay: function (idx) {
@@ -91,7 +92,7 @@ export default class BTCoption {
       },
       yAxis: {},
       series: [{
-        name: 'bar',
+        name: 'USD',
         type: 'line',
         color: '#5c9c43',
         data: this.price,
