@@ -59,13 +59,13 @@
           <v-list-tile-action>
             <v-icon light>picture_in_picture_alt</v-icon>
           </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
+          <v-list-tile-title>Coin Calculator</v-list-tile-title>
         </v-list-tile>
         <calculator></calculator>
       </v-list>
     </v-navigation-drawer>
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2018</span>
+      <span class="mx-auto caption">Cryptonia &copy; 2018</span>
     </v-footer>
   </v-app>
 </template>
