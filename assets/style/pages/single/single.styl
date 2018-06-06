@@ -3,6 +3,8 @@
     display flex
     justify-content space-between
     align-items center
+    @media screen and (max-width: 600px)
+        flex-direction column
     .image-single
         width 100px
         padding 10px
@@ -14,3 +16,5 @@
         align-items center
     .single-price
         text-align right
+         @media screen and (max-width: 600px)
+            text-align center
